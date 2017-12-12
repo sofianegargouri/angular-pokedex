@@ -1,0 +1,7 @@
+<mat-list *ngIf="pokemons.length > 0">
+  <mat-list-item *ngFor="let pokemon of pokemons; let i = index" routerLink="/pokemons/{{i + 1}}" style="cursor: pointer;">
+    <img matListAvatar src="assets/pokemon-sprites/sprites/{{i + 1}}.png" alt="{{pokemon.name}}">
+    <h3 matLine>{{pokemon.name}} #{{i + 1}}</h3>
+  </mat-list-item>
+</mat-list>
+<pokemon-loader *ngIf="pokemons.length == 0"></pokemon-loader>

@@ -1,0 +1,112 @@
+.pokemon-card {
+  width: 500px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+
+  .pokemon-card-first-col {
+    text-align: center;
+
+    .pokemon-card-image {
+      img {
+        width: 150px;
+      }
+    }
+  }
+
+  .pokemon-card-name {
+    text-transform: capitalize;
+  }
+
+  .pokemon-card-type {
+    margin-right: 5px;
+  }
+
+  .type {
+    border-radius: 2px;
+    color: #fff;
+    margin: 0.4rem;
+    padding: 0 0.6rem;
+    text-transform: uppercase;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &.fire {
+      background: #F08030;
+      border: 1px solid #F08030;
+    }
+    &.fighting {
+      background: #C03028;
+      border: 1px solid #C03028;
+    }
+    &.grass {
+      background: #77C950;
+      border: 1px solid #77C950;
+    }
+    &.poison {
+      background: #9F40A0;
+      border: 1px solid #9F40A0;
+    }
+    &.electric {
+      background: #F8D030;
+      border: 1px solid #F8D030;
+    }
+    &.ground {
+      background: #E0C068;
+      border: 1px solid #E0C068;
+    }
+    &.psychic {
+      background: #F85788;
+      border: 1px solid #F85788;
+    }
+    &.rock {
+      background: #B8A038;
+      border: 1px solid #B8A038;
+    }
+    &.bug {
+      background: #B8A038;
+      border: 1px solid #B8A038;
+    }
+    &.dragon {
+      background: #7038F8;
+      border: 1px solid #7038F8;
+    }
+    &.ghost {
+      background: #6F5798;
+      border: 1px solid #6F5798;
+    }
+    &.dark {
+      background: #705848;
+      border: 1px solid #705848;
+    }
+    &.steel {
+      background: #B8B9D0;
+      border: 1px solid #B8B9D0;
+    }
+    &.fairy {
+      background: #EE99AC;
+      border: 1px solid #EE99AC;
+    }
+    &.ice {
+      background: #98D8D9;
+      border: 1px solid #98D8D9;
+    }
+    &.water {
+      background: #6890F0;
+      border: 1px solid #6890F0;
+    }
+    &.flying {
+      background: #A88FF0;
+      border: 1px solid #A88FF0;
+    }
+    &.normal {
+      background: #A8A878;
+      border: 1px solid #A8A878;
+    }
+  }
+}

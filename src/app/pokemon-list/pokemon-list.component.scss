@@ -1,0 +1,19 @@
+.pokemon-card {
+  margin: 2rem;
+}
+
+.mat-card-header-text {
+  line-height: 40px;
+  text-transform: capitalize;
+}
+
+.pokemon-card-header-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.pokemon-card-image {
+  height: 8rem;
+  object-fit: contain;
+}
