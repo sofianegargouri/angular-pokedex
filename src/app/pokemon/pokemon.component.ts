@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { PokemonLoaderComponent } from '../pokemon-loader/pokemon-loader.component'
 
@@ -16,13 +16,19 @@ export class PokemonComponent implements OnInit {
   loading = false;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private pokemonService: PokemonService,
-  ) { }
+  ) {
+    router.events.subscribe ( event => {
+      if( event instanceof NavigationEnd ){
+        this.id = +this.route.snapshot.paramMap.get('id');
+        this.getPokemon();
+      }
+  } );
+  }
 
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.getPokemon();
   }
 
   getPokemon() {

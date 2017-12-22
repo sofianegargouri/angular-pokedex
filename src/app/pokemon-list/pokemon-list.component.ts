@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PokemonService } from '../pokemon.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,6 +11,8 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   pokemons = [];
+  searchedPokemons = [];
+  searchQuery = '';
 
   constructor(
     private pokemonService: PokemonService,
@@ -20,8 +23,20 @@ export class PokemonListComponent implements OnInit {
     this.pokemonService
       .getPokemons()
       .subscribe(pokemons => {
-        this.pokemons = pokemons.results
+        this.pokemons = pokemons.results.map(
+          (pokemon, idx) => ({
+            ...pokemon,
+            id: idx+1,
+          })
+        )
+        this.searchPokemons('')
       });
+  }
+
+  searchPokemons(query) {
+    this.searchedPokemons = this.pokemons.filter(pokemon =>
+      query.length < 1 || pokemon.name.includes(query) || `${pokemon.id}`.includes(query)
+    )
   }
 
   openPokemon(id) {
